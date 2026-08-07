@@ -116,7 +116,7 @@ export function createApp({
   });
 
   const distDir = path.join(__dirname, '..', 'client', 'dist');
-  if (fs.existsSync(distDir)) {
+  if (!process.env.VERCEL && fs.existsSync(distDir)) {
     app.use(express.static(distDir));
     app.get('*', (_req, res) => {
       res.sendFile(path.join(distDir, 'index.html'));
