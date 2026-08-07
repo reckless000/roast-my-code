@@ -8,12 +8,12 @@
       "runtime": "nodejs20.x"
     }
   },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index" },
-    { "source": "/roast", "destination": "/api/index" },
-    { "source": "/config", "destination": "/api/index" },
-    { "source": "/health", "destination": "/api/index" },
+  "routes": [
+    { "src": "^/api/.*", "dest": "/api/index" },
+    { "src": "^/roast", "dest": "/api/index" },
+    { "src": "^/config", "dest": "/api/index" },
+    { "src": "^/health", "dest": "/api/index" },
     { "handle": "filesystem" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
