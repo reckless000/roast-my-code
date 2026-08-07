@@ -1,7 +1,6 @@
 {
   "installCommand": "npm install --include=dev",
   "buildCommand": "npm run build",
-  "outputDirectory": "client/dist",
   "functions": {
     "api/index.js": {
       "maxDuration": 60,
