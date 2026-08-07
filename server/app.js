@@ -115,8 +115,8 @@ export function createApp({
     res.status(404).json({ error: 'Not found.' });
   });
 
-  const distDir = path.join(__dirname, '..', 'dist');
-  if (!process.env.VERCEL && fs.existsSync(distDir)) {
+  const distDir = path.join(__dirname, '..', 'client', 'dist');
+  if (fs.existsSync(distDir)) {
     app.use(express.static(distDir));
     app.get('*', (_req, res) => {
       res.sendFile(path.join(distDir, 'index.html'));
